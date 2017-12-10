@@ -113,8 +113,8 @@ void grainv0_sequence_gen(GRAINV0 *gv0, long long int lengthofseq, FILE *keystre
 			//Outbyte |= (grainv0_onebit_gen(gv0) << obit);
 		}
 	//	printf("%c", (unsigned char)Outbyte);
-		fprintf(keystream, "%c", (unsigned char)Outbyte);
-		fprintf(nbitkeystream, "%c", (unsigned char)Nbyte);
+		fprintf(keystream, "%c", (unsigned char)Outbyte);    // Saves keystream output
+		fprintf(nbitkeystream, "%c", (unsigned char)Nbyte);  // In case analysis of outputs of NFSR and LFSR is desired
 		fprintf(lbitkeystream, "%c", (unsigned char)Lbyte);
 		Outbyte = 0;
 
