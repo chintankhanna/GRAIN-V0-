@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #define KEYSIZE 80  // in bits
 #define IVSIZE  64  // in bits
 
@@ -43,3 +44,6 @@ void init_key(GRAINV0 *gv0);
 void grainv0_clock160(GRAINV0 *gv0);
 GRAINV0OUT grainv0_onebit_gen(GRAINV0 *gv0);
 void grainv0_sequence_gen(GRAINV0 *gv0, long long int lengthofseq, FILE *gv0keystream, FILE *nbitkeystream, FILE *lbitkeystream);
+_int8* grainv0_sequence_gen1(GRAINV0 *gv0, long long int lengthofseq);
+int hamming(_int8 *input1, _int8 *input2, int len);
+void avalanche_gen(GRAINV0 *gv0, _int8 *key, _int8 *iv);
